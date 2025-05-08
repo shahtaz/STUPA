@@ -1,0 +1,74 @@
+{% extends "myapp/base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/profile.css' %}">
+{% endblock %}
+{% block title %}Profile - STUPA{% endblock %}
+
+{% block content %}
+<div class="container">
+
+  <div class="profile-section">
+    {% if user_profile.profile_image %}
+      <img src="{{ user_profile.profile_image.url }}" alt="Profile Photo" class="profile-img">
+    {% else %}
+      <div class="profile-img"></div>
+    {% endif %}
+
+    <h2>{{ request.user.get_full_name }}</h2>
+    <p><strong>Username :</strong> {{ request.user.username }}</p>
+    <p><strong>mail :</strong> {{ request.user.email }}</p>
+  
+
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit" class="btn">Update Profile</button>
+    </form>
+  </div>
+
+
+
+  <hr>
+
+  <div class="community-section">
+    <h3>community</h3>
+    {% if communities %}
+      <ul>
+        {% for community in communities %}
+        <li>
+          <span>{{ forloop.counter }}. {{ community.name }}</span>
+          <span>
+            <a href="{% url 'community_page' community.id %}" title="View">👁️</a>
+            {% if community.creator == request.user %}
+              <a href="{% url 'delete_community' community.community_id %}" title="Delete">🗑️</a>
+            {% endif %}
+          </span>
+        </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>You are not a member of any community.</p>
+    {% endif %}
+
+    <div style="margin-top: 10px;">
+      <a href="{% url 'create_community' %}" class="btn">new community</a>
+    </div>
+    <div style="margin-top: 20px;">
+      <form method="post" action="{% url 'join_community' %}">
+        {% csrf_token %}
+        <input type="text" name="community_id" placeholder="Enter Community ID" required>
+        <button type="submit" class="btn">Join Community</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="bottom-nav">
+    <a href="{% url 'collection' %}" class="btn" >Your Collection</a>
+    <a href="{% url 'library' %}" class="btn">Library</a>
+    <a href="{% url 'expert_note' %}" class="btn">Expert Note</a>
+  </div>
+
+</div>
+{% endblock %}

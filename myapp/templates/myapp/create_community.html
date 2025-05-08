@@ -1,0 +1,30 @@
+
+{% extends "myapp/base.html" %}
+{% load static %}
+{% block extra_css %}<link rel="stylesheet" href="{% static 'css/create_community.css' %}">
+{% endblock %}
+{% block title %}STUPA{% endblock %}
+
+{% block content %}
+
+
+
+<div>
+    <div class="page_name">
+        <h2>Create a New Community</h2>
+        <hr>
+    </div>
+    
+    <div class="container">
+        <form method="post">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <button type="submit" class="btn btn-primary">Create</button>
+        </form>
+      </div>
+    
+</div>
+
+
+
+{% endblock %}

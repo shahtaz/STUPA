@@ -1,0 +1,76 @@
+
+.checkout-container {
+    max-width: 500px;
+    margin: 60px auto;
+    background-color: #ffffff2e;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+  
+  /* Title */
+  .title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 25px;
+    text-align: center;
+    color: #2c3e50;
+  }
+  
+  /* Form styling */
+  form .form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Labels */
+  form label {
+    margin-bottom: 6px;
+    font-weight: 500;
+    font-size: 14px;
+    color: #555;
+  }
+  
+  /* Inputs */
+  form input[type="text"],
+  form textarea,
+  form input[type="email"],
+  form input[type="password"] {
+    padding: 10px 12px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #000000;
+    transition: border 0.2s ease;
+    color: #FFB765;
+    font-weight: 700;
+  }
+  
+  form input:focus,
+  form textarea:focus {
+    outline: none;
+    border-color: #000000;
+    background-color: #ffb765;
+    font-weight: 900;
+    color: #000000;
+  }
+  
+  /* Button */
+  .done-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #FFB765;
+    color: #000000;
+    font-size: 20px;
+    font-weight: 900;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .done-btn:hover {
+    background-color: #000000;
+    color: #FFB765;
+  }

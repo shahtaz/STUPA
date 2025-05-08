@@ -1,0 +1,56 @@
+{% extends "myapp/base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/library.css' %}">
+{% endblock %}
+
+{% block title %}STUPA{% endblock %}
+
+{% block content %}
+<h1 class="library">Library</h1>
+
+
+<!-- search bar-->
+<form method="get" action="" class="search-form">
+    <input type="text" name="search" value="{{ search_query }}" placeholder="Search for a book" class="search-input">
+    <button type="submit" class="search-button"><i class="fas fa-search"></i></button>
+</form>
+<hr class="hola">
+<!-- display books -->
+<div class="book-list">
+    {% for book in page_obj %}
+        <div class="book-item">
+            <div class="left-side">
+                <span class="book-number">{{ forloop.counter }}.</span>
+                <span class="book-name">{{ book.name }}</span>
+                <span class="book-author">Author   : {{ book.author }}</span>
+            </div>
+            <a href="{{ book.pdf_file.url }}" target="_blank" class="book-download"><i class="fas fa-download"></i></a>
+        </div>
+    {% empty %}
+        <p>No books found.</p>
+    {% endfor %}
+</div>
+
+
+
+<!-- making pagination -->
+<div class="pagination">
+    <span class="step-links">
+        {% if page_obj.has_previous %}
+            <a href="?page=1&search={{ search_query }}">First</a>
+            <a href="?page={{ page_obj.previous_page_number }}&search={{ search_query }}">Previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+        </span>
+
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}&search={{ search_query }}">Next</a>
+            <a href="?page={{ page_obj.paginator.num_pages }}&search={{ search_query }}">Last</a>
+        {% endif %}
+    </span>
+</div>
+{% endblock %}

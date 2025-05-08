@@ -1,0 +1,30 @@
+
+{% extends "myapp/base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/store.css' %}">
+{% endblock %}
+
+{% block title %}STORE{% endblock %}
+
+{% block content %}
+
+<div class='prod_list'>
+    {% for product in items %}
+    <div class='prod_container'>
+        <div class='left_box'> 
+            <img src="{{ product.image1.url }}" alt="{{ product.name }}" class='prod_photo'>
+        </div>
+        <div class="right_box">
+            <h1 class='prod_name'>{{ product.name }} </h1>
+            <p class='prod_description'>{{ product.short_description }}</p>
+            <p class='prod_price'><strong>Price:</strong> ${{ product.price }}</p>
+            <a href="{% url 'productview' product.slug %}" class="prod-view-button">View</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+
+{% endblock %}

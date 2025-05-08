@@ -1,0 +1,31 @@
+{% extends "myapp/base.html" %}
+{% load static %}
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/apps.css' %}">
+{% endblock %}
+
+{% block title %}
+    STUPA - App List
+{% endblock %}
+
+{% block content %}
+    <div class="app-list">
+        {% for app in apps %}
+            <div class="app-item">
+                <div class="serial-number">{{ forloop.counter }}.</div>
+                {% if app.app_logo %}
+                    <img class="app-logo" src="{{ app.app_logo.url }}" alt="{{ app.name }} logo">
+                {% else %}
+                    <img class="app-logo" src="{% static 'default_logo.png' %}" alt="No logo">
+                {% endif %}
+                <div class="app-name">{{ app.name }}</div>
+                <a href="{{ app.file.url }}" class="install-button" download>Install</a>
+            </div>
+            {% if not forloop.last %}
+                <hr class="app-divider">
+            {% endif %}
+        {% empty %}
+            <p>No apps available.</p>
+        {% endfor %}
+    </div>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+    <title>Login</title>
+</head>
+
+<body>
+    
+    <div class="login">
+        <div class="logo">
+            <img src="{% static 'images/stupa_logo.PNG' %}" alt="Stupa Logo">
+        </div>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="field">
+                <label for="username">Username</label>
+                <input type="text" name="username" required>
+            </div>
+    
+            <div class="field">
+                <label for="password">Password</label>
+                <input type="password" name="password" required>
+            </div>
+            <div class="submit_butt">
+                <button type="submit">Login</button>
+            </div>
+        </form>
+        <p>Don't have an account? <a href="{% url 'signup' %}" >Sign up here</a></p>
+    </div>
+
+</body>
+</html>

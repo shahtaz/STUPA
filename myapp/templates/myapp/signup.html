@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/signup.css' %}">
+
+    <title>Sign Up</title>
+</head>
+<body>
+    <div class = "signup">
+        <div class="logo">
+            <img src="{% static 'images/stupa_logo.PNG' %}" alt="Stupa Logo">
+        </div>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="field">
+                <label for="name">Name</label>
+                <input type="text" name="name" value="{{ form.name.value }}" required>
+            </div>
+    
+            <div class="field">
+                <label for="username">Username</label>
+                <input type="text" name="username" value="{{ form.username.value }}" required>
+            </div>
+    
+            <div class="field">
+                <label for="email">Email</label>
+                <input type="email" name="email" value="{{ form.email.value }}" required>
+            </div>
+    
+            <div class="field">
+                <label for="password">Password</label>
+                <input type="password" name="password" required>
+            </div>
+    
+            <div class="field">
+                <label for="confirm_password">Confirm Password</label>
+                <input type="password" name="confirm_password" required>
+            </div>
+            <div class="submit_butt" >
+                <button type="submit">Sign Up</button>
+            </div>
+        </form>
+        <p>Already have an account? <a href="{% url 'login' %}">Login here</a></p>
+    </div>
+
+
+</body>
+</html>

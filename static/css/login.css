@@ -1,0 +1,90 @@
+/* Fullscreen and center layout */
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000000;
+    font-family: Arial, sans-serif;
+    color: #ffffff;
+}
+
+/* Login container */
+.login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    font-weight: bold;
+}
+
+/* Field styling for consistent label/input width */
+.field {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Label styling */
+.field label {
+    width: 35%;
+    margin-right: 10px;
+    text-align: right;
+}
+
+/* Input styling */
+.field input {
+    width: 65%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* Button container */
+.submit_butt {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Submit button styling */
+.submit_butt button {
+    background-color: #FFB765;
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 10px 25px;
+    font-size: 16px;
+    border-radius: 6px;
+    font-weight: bolder;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit_butt button:hover {
+    background-color: #ffe1bf;
+}
+
+/* Login link styling */
+.login p a {
+    color: #FFB765;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+/* Logo styling */
+.logo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.logo img {
+    width: 400px;
+    height: auto;
+    display: block;
+}

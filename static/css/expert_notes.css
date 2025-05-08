@@ -1,0 +1,105 @@
+
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    flex-grow: 1;
+}
+
+footer {
+    margin-top: auto;
+    /* Add any footer-specific styles here */
+}
+
+
+
+
+.page_name {
+    margin-top: 40px;
+    margin-left: 20px;
+    text-align: left;
+    margin-left: 20px; /* To give some space from the left */
+}
+
+.line{
+    margin: 20px;
+}
+
+.container {
+    background-color: rgb(0, 0, 0);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 500px;
+    width: 100%;
+    margin-top: 40px; /* Reduced margin for better alignment */
+    margin-bottom: 40px; /* Reduced margin for better alignment */
+}
+
+h2 {
+    color: #333;
+    margin-bottom: 20px;
+    text-align: left; /* Align h2 to left instead of center */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 20px;
+    margin-bottom: 5px;
+    color: #FFB765;
+
+}
+
+
+
+input[type="file"],
+select,
+button {
+    padding: 10px;
+    font-size: 20px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+}
+
+
+
+.select_format{
+    background-color: #FFB765;
+    color: black;
+}
+
+
+input[type="file"]:focus,
+select:focus,
+button:focus {
+    border-color: #000000;
+}
+
+button {
+    background-color: #000000;
+    color: #FFB765;
+    font-weight: 900;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #FFB765;
+    color: #000000;
+}
+
+button:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+}
+

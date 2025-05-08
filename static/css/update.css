@@ -1,0 +1,136 @@
+
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    flex-grow: 1;
+}
+
+footer {
+    margin-top: auto;
+}
+/* General container styling */
+
+/* Centering the container */
+.update-container {
+    margin-top: 150px;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin-left: 25%;
+    margin-right: 25%;
+    text-align: center;
+}
+
+.update_device{
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+
+/* Style for the linked device information */
+.linked-device-info {
+    background-color: #000000;
+    color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Text styling */
+.linked-device-info p {
+    margin: 10px 0;
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffe1be;
+}
+
+.update-container .hell_stat {
+    margin: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 20px;
+    font-size: 30px;
+    font-weight: bold;
+    color: red !important;
+}
+
+
+.update-container .hell_stat2 {
+    margin: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 20px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #FFB765 !important;
+}
+/* Highlighted text for correct version and firmware */
+.linked-device-info p strong {
+    color: #ffffff;
+    font-weight: 1000;
+   
+}
+
+/* Status text for update available or up to date */
+.status-text {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+/* Update available in a black box */
+
+/* Install update button style */
+.update-form .update-button {
+    margin-top: 100px;
+    background-color: #FFB765;
+    color: rgb(0, 0, 0);
+    border: none;
+    font-weight: 900;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.update-form .update-button:hover {
+    color: #FFB765;
+    background-color: #000000;
+}
+
+/* Link device form styles */
+.link-device-form {
+    margin-top: 20px;
+}
+
+.device-id-input {
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 16px;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.link-device-button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.link-device-button:hover {
+    background-color: #218838;
+}

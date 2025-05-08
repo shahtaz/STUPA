@@ -1,0 +1,82 @@
+{% extends "myapp/base.html" %}
+{% load static %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/community.css' %}">
+{% endblock %}
+
+{% block title %}{{ community.name }} - STUPA{% endblock %}
+
+{% block content %}
+<div class="community-wrapper">
+
+  <!-- community stuff  -->
+  <div class="community-header">
+    <h1>{{ community.name }}</h1>
+    <div class="community-info">
+      <div>
+        <p>Name: {{ community.name }}</p>
+        <p>Community ID: {{ community.community_id }}</p>
+      </div>
+      <div>
+        <p>Admin: {{ community.creator.username }}</p>
+        <p>Members: {{ community.members.count }}</p>
+      </div>
+    </div>
+    <hr>
+  </div>
+
+  <!-- communjity post-->
+  <div class="community-messages" id="messageContainer">
+    {% for post in posts %}
+      <div class="message">
+        <div class="msg-info">
+          <p><strong>{{ post.user.username }}</strong></p>
+          <p>{{ post.created_at|time:"H:i" }}<br>{{ post.created_at|date:"d/m/Y" }}</p>
+          <div class="msg-box">
+            {% if post.message %}
+              <div class="msg-content">{{ post.message }}</div>
+            {% endif %}
+            {% if post.file %}
+              <a href="{{ post.file.url }}" download>
+                <button class="btn-get">Download File</button>
+              </a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    {% empty %}
+      <p>No posts yet.</p>
+    {% endfor %}
+  </div>
+
+  <!-- post form -->
+  <hr>
+  <form method="post" enctype="multipart/form-data" class="community-input">
+    {% csrf_token %}
+    
+    <div class="form-group">
+      <label for="id_message">Message:</label>
+      {{ form.message }}
+    </div>
+
+    <div class="form-group">
+      <label for="id_file">Attach File (optional):</label>
+      {{ form.file }}
+    </div>
+
+    <button type="submit" class="send-btn">Send</button>
+  </form>
+
+</div>
+
+<!--autoscroll to bot  -->
+<script>
+  window.addEventListener('load', function () {
+    const container = document.getElementById("messageContainer");
+    if (container) {
+      container.scrollTop = 0;
+    }
+  });
+</script>
+
+{% endblock %}

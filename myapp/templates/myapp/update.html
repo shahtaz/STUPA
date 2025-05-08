@@ -1,0 +1,49 @@
+{% extends "myapp/base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/update.css' %}">
+{% endblock %}
+
+{% block title %}STUPA{% endblock %}
+
+{% block content %}
+<div class="update-container">
+    <h2 class="update_device">Update Device</h2>
+
+    {% if messages %}
+        <ul class="update-messages">
+            {% for message in messages %}
+                <li class="message {{ message.tags }}">{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    {% if linked %}
+        <div class="linked-device-info">
+            <p><strong>Linked Device:</strong> {{ linked_device.device.name }} (ID: {{ linked_device.device.device_id }})</p>
+            <p><strong>Current Version:</strong> {{ linked_device.current_version }}</p>
+            <p><strong>Latest Firmware Version:</strong> {{ linked_device.device.firmware_version }}</p>
+            {% if linked_device.is_up_to_date %}
+                <p class="hell_stat2" > Your device is up to date.</p>
+            {% else %}
+                <p class="hell_stat" > An update is available!</p>
+            {% endif %}
+        </div>
+
+        <form method="post" class="update-form">
+            {% csrf_token %}
+            {% if not linked_device.is_up_to_date %}
+                <button type="submit" name="perform_update" class="update-button">Install Update</button>
+            {% endif %}
+        </form>
+    {% else %}
+        <form method="post" class="link-device-form">
+            {% csrf_token %}
+            <label for="device_id">Enter Device ID to Link:</label>
+            <input type="number" name="device_id" class="device-id-input" required placeholder="Device ID">
+            <button type="submit" class="link-device-button">Link Device</button>
+        </form>
+    {% endif %}
+</div>
+{% endblock %}

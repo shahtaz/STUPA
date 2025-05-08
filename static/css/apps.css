@@ -1,0 +1,92 @@
+/* App Section Styling */
+.app-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.app-item {
+    display: flex;
+    align-items: center;
+    margin-top: 100px;
+    margin-left: 75px;
+    margin-right: 75px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.serial-number {
+    font-weight: bold;
+    margin-right: 15px;
+}
+
+.app-logo {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 50px;
+    margin-left: 30px;
+}
+
+.app-name {
+    font-size: 18px;
+    font-weight: bold;
+    flex-grow: 1;
+}
+
+.install-button {
+    background-color: #FFB765;
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.install-button:hover {
+    background-color: #ffd3a1;
+}
+
+.app-divider {
+    border-top: 1px solid #e0e0e0;
+    margin-top: 20px;
+}
+
+@media screen and (max-width: 768px) {
+    .app-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .app-logo {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .app-name {
+        font-size: 16px;
+    }
+}
+
+
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    flex-grow: 1;
+}
+
+footer {
+    margin-top: auto;
+    /* Add any footer-specific styles here */
+}

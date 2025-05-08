@@ -1,0 +1,96 @@
+
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    flex-grow: 1;
+}
+
+footer {
+    margin-top: auto;
+    /* Add any footer-specific styles here */
+}
+
+
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    background: #fdd3a0;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
+  }
+  
+  h2 {
+    font-size: 26px;
+    margin-bottom: 25px;
+    color: #222;
+    text-align: center;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  form input[type="text"],
+  form textarea,
+  form select {
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  form input[type="text"]:focus,
+  form textarea:focus,
+  form select:focus {
+    border-color: #FFB765;
+    outline: none;
+  }
+  
+  .btn {
+    padding: 10px 16px;
+    background-color: #FFB765;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    border: none;
+    font-weight: 900;
+    border-radius: 6px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn:hover {
+    background-color: #000000;
+    color: #FFB765;
+  }
+
+
+  
+  .page_name  {
+    margin: 50px;
+  }
+  
+  .page_name h2 {
+    text-align: left;
+    margin: 0;
+    font-weight: 900;
+    font-size: 30px;
+    color: #333;
+  }
+  
+  .page_name hr {
+   
+    border: 1px solid #000000;
+  
+  }

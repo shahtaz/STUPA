@@ -1,0 +1,33 @@
+
+{% extends "myapp/base.html" %}
+{% load static %}
+{% block extra_css %}<link rel="stylesheet" href="{% static 'css/expert_notes.css' %}">
+{% endblock %}
+{% block title %}STUPA{% endblock %}
+
+{% block content %}
+
+<div class="page_name">
+    <h2>Expert Note</h2>
+</div>
+<hr class="line">
+
+<div class="container">
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label>Select PDF:</label>
+        <input type="file" name="pdf_file" accept="application/pdf" required><br><br>
+    
+        <label>Choose output format:</label>
+        <select name="format" >
+            <option value="txt"  >TXT</option>
+            <option value="pdf">PDF</option>
+        </select><br><br>
+    
+        <button type="submit">Generate Note</button>
+    </form>
+</div>
+
+
+
+{% endblock %}

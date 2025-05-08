@@ -1,0 +1,130 @@
+
+
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    flex-grow: 1;
+}
+
+footer {
+    margin-top: auto;
+    /* Add any footer-specific styles here */
+}
+
+.hola{
+    margin: 40px;
+    padding: 20px;
+}
+
+.library{
+    font-weight: bold;
+    margin: 20px;
+}
+
+
+/* Remove absolute positioning to ensure the search bar is below the navbar */
+.search-form {
+    margin-right: 10%;
+    margin-top: 20px;  /* Adjust this value to create space between the navbar and the search bar */
+    text-align: right;  /* Align search bar to the right */
+}
+
+.search-input {
+    padding: 8px;
+    width: 200px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: black;
+    color: #FFB765;
+}
+
+.search-button {
+    border-radius: 15px;
+    margin-left: 20px;
+    height: 45px;
+    width: 45px;
+    background-color: #FFF7E0;
+    color: #FFB765;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.search-button:hover {
+    background-color: #ffffff;
+    color: black;
+}
+
+/* Book list styling */
+
+.book-list {
+    margin-top: 100px;
+    margin-left: 100px;
+    margin-right: 100px;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid black;
+}
+
+.book-item {
+    display: flex;
+    justify-content: space-between; /* Distribute items across the width */
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.book-item .left-side {
+    display: flex;  /* Keep book number, name, and author together */
+    align-items: center;
+}
+
+.book-item .book-number {
+    font-weight: bold;
+    margin-right: 10px;
+    font-size: 30px;
+}
+
+.book-item .book-name,
+.book-item .book-author {
+    margin-right: 10px;
+    font-size: 30px;
+    margin-left: 40px;
+}
+
+.book-item .book-download {
+    background-color: #000000;
+    color: white;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.book-item .book-download:hover {
+    background-color: #000000;
+    color: #FFB765;
+}
+
+
+
+
+/* Pagination controls */
+.pagination {
+    display: flex;
+    justify-content: flex-end;
+    margin: 40px 100px 20px 100px;
+}
+
+.pagination .step-links a {
+    margin: 0 5px;
+    text-decoration: none;
+    color: #000000;
+}
+
+.pagination .current {
+    margin: 0 5px;
+}

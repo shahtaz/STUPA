@@ -1,0 +1,162 @@
+.product_view {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+   
+    border: 3px solid black;
+}
+
+.upper {
+    display: flex;
+    background-color: black;
+    justify-content: space-between;
+    
+}
+
+.image {
+    display: flex;
+    background-color: black;
+    padding: 20px;
+    gap: 10px;
+}
+
+.big_image {
+    flex: 2;
+}
+
+.small_images {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    flex: 1;
+    padding-left: 20px;
+}
+
+.prod_photo_big {
+    width: 100%;
+    max-width: 400px;
+    object-fit: cover;
+
+    height: auto;
+    border-radius: 10px;
+}
+
+.prod_photo {
+    width: 100%;
+    height: 100%;
+    max-width: 200px;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.product_name {
+    color: #f9a13c;
+
+    font-size: 2em;
+    font-weight: bold;
+    margin-top: 0;
+}
+.view_details {
+
+    /* flex: 2;
+    text-align: left;
+    padding-left: 20px;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 20px; */
+    flex: 2;
+    text-align: left;
+    padding-left: 20px;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 20px;
+    max-width: 100%; /* prevent it from stretching too far */
+    overflow-wrap: break-word;
+}
+
+.description{
+    color: white;
+    font-weight: bold;
+}
+
+.add-to-cart {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    margin: 20px;
+    background-color: #ffffff;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 10px;
+    max-width: fit-content;
+}
+
+.add-to-cart:hover {
+    background-color: #f9a13c;
+    color: black;
+    font-weight: bold;
+}
+
+table {
+    width: 100%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+}
+
+th, td {
+    padding: 12px 20px;
+    border-top: 1px solid #000000;
+    border-bottom: 1px solid #000000;
+    border-right: 1px solid #000000;
+    text-align: left;
+}
+
+/* Set the first column (Row) to take 30% of the width */
+th:first-child, td:first-child {
+    width: 30%;
+}
+
+/* Set the second column (Data) to take 70% of the width */
+th:last-child, td:last-child {
+    width: 70%;
+}
+
+th:first-child,
+td:first-child {
+    border-left: none;
+}
+
+th:last-child,
+td:last-child {
+    border-right: none;
+}
+
+th {
+    background-color: #f9a13c;
+    color: white;
+    font-weight: bold;
+}
+
+tr:hover {
+    background-color: #ffffff;
+}
+
+
+.spec_txt{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+.spec{
+    margin: 20px;
+}

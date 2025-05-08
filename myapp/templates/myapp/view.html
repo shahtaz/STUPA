@@ -1,0 +1,54 @@
+{% extends "myapp/base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/view.css' %}">
+{% endblock %}
+{% block title %}PRODUCT{% endblock %}
+{% block content %}
+
+<h1>
+    product view 
+
+</h1>
+<div class='product_view'>
+    <div class='upper'>
+        <div class='image'>
+            <div class='big_image'>
+                <img src="{{ product.image1.url }}" alt="{{ product.name }}" class='prod_photo_big'>
+            </div>
+            <div class='small_images'>
+                <img src="{{ product.image2.url }}" alt="{{ product.name }}" class='prod_photo'>
+                <img src="{{ product.image3.url }}" alt="{{ product.name }}" class='prod_photo'>
+            </div>
+        </div>
+
+        <div class='view_details'>
+            <h1 class="product_name">{{ product.name }}</h1>
+            <p class="description">
+                hello world
+                {{ product.name }}
+            </p>
+            <a href="{% url 'add_to_cart' product.slug %}" class="add-to-cart">add to cart</a>
+        </div>
+    </div>
+
+    <div class='spec'>
+        <h2 class='spec_txt'>
+            specification
+        </h2>
+        <table border="0" cellpadding="10">
+
+            <tr><td>Size</td><td>{{ product.size }}</td></tr>
+            <tr><td>Resolution</td><td>{{ product.resulution }}</td></tr>
+            <tr><td>Processor</td><td>{{ product.processor }}</td></tr>
+            <tr><td>Ram</td><td>{{ product.ram }}</td></tr>
+            <tr><td>Storage</td><td>{{ product.storage }}</td></tr>
+            <tr><td>OS</td><td>{{ product.os }}</td></tr>
+            <tr><td>Battery</td><td>{{ product.battery }}</td></tr>
+            <tr><td>Connectivity</td><td>{{ product.connectivity }}</td></tr>
+        </table>        
+    </div>
+</div>
+
+{% endblock %}

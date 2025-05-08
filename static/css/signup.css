@@ -1,0 +1,89 @@
+/* Body styling */
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000000;
+    font-family: Arial, sans-serif;
+}
+
+/* Signup container */
+.signup {
+    background-color: #000000;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    color: white;
+    width: 90%;
+    max-width: 450px;
+    font-weight: bold;
+}
+
+/* Logo styling */
+.logo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.logo img {
+    width: 400px;
+    height: auto;
+}
+
+/* Form field container */
+.field {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+/* Label styling */
+.field label {
+    width: 40%;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+/* Input styling */
+.field input {
+    width: 60%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Submit button container */
+.submit_butt {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Button styling */
+button {
+    padding: 10px 30px;
+    background-color: #FFB765;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #ffe1bf;
+}
+
+/* Paragraph and link */
+p {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 14px;
+}
+p a {
+    color: #FFB765;
+    text-decoration: none;
+}
+p a:hover {
+    text-decoration: underline;
+}

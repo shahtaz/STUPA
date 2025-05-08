@@ -1,0 +1,153 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    flex-grow: 1;
+}
+
+footer {
+    margin-top: auto;
+    /* Add any footer-specific styles here */
+}
+
+.empty-cart-message {
+  font-weight: bold;    
+  font-size: 24px;       
+  text-align: center;  
+  color: #ff6776;    
+
+}
+.cart-container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .cart-container h2 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 30px;
+    color: #333;
+  }
+  
+  /* Table */
+  .cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+  }
+  
+  .cart-table thead {
+    background-color: #ffd5a5;
+  }
+  
+  .cart-table th,
+  .cart-table td {
+    padding: 12px 15px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .cart-table img {
+    max-width: 70px;
+    height: auto;
+    border-radius: 6px;
+  }
+  
+  /* Quantity form */
+  .cart-table input[type="number"] {
+    width: 60px;
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align: center;
+  }
+  
+  .cart-table button {
+    margin-top: 6px;
+    padding: 6px 12px;
+    background-color: #000000;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .cart-table button:hover {
+    background-color: #000000;
+  }
+  
+  /* Delete button */
+
+  .update-btn {
+    color:  #09efff;
+    font-size: 20px;
+    padding: 6px 10px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .prod_name{
+    font-size: 20px;
+    font-weight: 900;
+  }
+
+  .update-btn:hover {
+    color: #1aa3f2;
+    font-weight: bold;
+  }
+  
+  .q_box{
+    background-color: #000000;
+    color: #FFB765;
+    font-weight: 900;
+    font-size: 20;
+  }
+  
+
+  .delete-btn {
+    color:  #ff808d;
+    font-size: 18px;
+    padding: 6px 10px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .delete-btn:hover {
+    color: #ffd3d8;
+  }
+  
+  /* Cart summary */
+  .cart-summary {
+    text-align: right;
+    padding-top: 20px;
+    border-top: 2px solid #eee;
+  }
+  
+  .cart-summary h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #444;
+  }
+  
+  .checkout-btn {
+    padding: 10px 20px;
+    background-color: #FFB765;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 6px;
+    transition: background-color 0.3s;
+  }
+  
+  .checkout-btn:hover {
+    background-color: #000000;
+    color: #FFB765;
+  }

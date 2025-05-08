@@ -1,0 +1,132 @@
+
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    flex-grow: 1;
+}
+
+footer {
+    margin-top: auto;
+    /* Add any footer-specific styles here */
+}
+.container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+  }
+  
+  /* Profile Image */
+  .profile-img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background-color: #d3d3d3;
+    object-fit: cover;
+    display: block;
+    margin-bottom: 20px;
+  }
+  
+  /* Profile Section */
+  .profile-section {
+    margin-bottom: 30px;
+  }
+  
+  .profile-section h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .profile-section p {
+    margin: 4px 0;
+    font-size: 15px;
+  }
+  
+  form {
+    margin-top: 20px;
+  }
+  
+  /* Device Info */
+  .device-info {
+    margin: 20px 0;
+    font-size: 16px;
+  }
+  
+  /* Community Section */
+  .community-section {
+    border: 1px solid #222;
+    padding: 16px;
+    margin: 40px 0;
+    background-color: #fff9e9;
+    max-width: 400px;
+  }
+  
+  .community-section h3 {
+    margin-bottom: 12px;
+    font-size: 18px;
+    text-transform: lowercase;
+  }
+  
+  .community-section ul {
+    list-style-type: none;
+    padding: 0;
+    max-height: 160px;
+    overflow-y: auto;
+  }
+  
+  .community-section li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 6px 0;
+    padding: 6px 10px;
+    background-color: #fff;
+    border-radius: 6px;
+    font-size: 14px;
+  }
+  
+  .community-section a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #FFB765;
+  }
+  
+  /* Buttons */
+  .btn {
+    background-color: #000;
+    color: #FFB765;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 10px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.2s ease;
+  }
+  
+  .btn:hover {
+    background-color: #FFB765;;
+  }
+
+
+  .bottom-nav {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  
+  .bottom-nav .btn {
+    flex: 1;
+    text-align: center;
+  }
+  

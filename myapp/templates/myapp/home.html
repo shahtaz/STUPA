@@ -1,0 +1,87 @@
+{% extends "myapp/base.html" %}
+{% load static %}
+{% block extra_css %}<link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock %}
+{% block title %}STUPA{% endblock %}
+
+{% block content %}
+    <div id="carouselExample" class="carousel slide">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{% static 'images/two.webp' %}" class="d-block w-100 carousel-image" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'images/three.webp' %}" class="d-block w-100 carousel-image" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'images/two.webp' %}" class="d-block w-100 carousel-image" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+{% comment %} 
+<div class="hell"> 
+     <div id="cat-c" class="mycontainer">
+        {% for product in products %}
+        <div class="photo">
+            <img src="{{ product.image1.url }}" alt="Photo">
+        </div>
+        <div class="description">
+            <h1>{{ product.name }}</h1><br><br>
+            <p>{{ product.short_description }}</p><br><br>
+            <div class="button">
+                <a href="#" class="view-button">View</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div> 
+</div>  {% endcomment %}
+<div class="hell"> 
+    <div id="cat-c" class="mycontainer">
+        {% for product in products %}
+        <div class="product">
+            <div class="photo">
+                <img src="{{ product.image1.url }}" alt="Photo">
+            </div>
+            <div class="description">
+                <div class="text">
+                    <h1>{{ product.name }}</h1>
+                    <p>{{ product.short_description }}</p>
+                </div>
+                <div class="button">
+                    <a href="{% url 'productview' product.slug %}" class="view-button">View</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div> 
+</div>
+
+
+
+<div class="module_shit">
+    <h1> Modules </h1>
+    <div class="cards-list">
+        
+        {% for each in modules %}
+        <div class="card">
+            <div class="card_image">
+                <a href="{% url 'productview' each.slug %}">
+                    <img src="{{ each.image1.url }}" />
+                </a>
+            </div>
+            
+        </div>
+        {% endfor %}
+    </div>
+    
+</div>
+
+{% endblock %}

@@ -1,0 +1,41 @@
+
+{% extends "myapp/base.html" %}
+{% load static %}
+
+{% block extra_css %}
+  <link rel="stylesheet" href="{% static 'css/collection.css' %}">
+{% endblock %}
+
+{% block title %}STUPA{% endblock %}
+
+{% block content %}
+<div class="page_name">
+    <h2>Your PDF Collection</h2>
+    <hr>
+</div>
+  <div class="collection-container">
+      
+      <!-- Upload Form -->
+      <form method="post" enctype="multipart/form-data" class="upload-form">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit" class="upload-button">Upload PDF</button>
+    </form>
+
+
+</div>
+<div class="collection-container">
+    <!-- Display User's PDFs -->
+    <h3>Uploaded PDFs:</h3>
+    <ul class="pdf-list">
+      {% for pdf in pdfs %}
+        <li class="pdf-item">
+          <a href="{{ pdf.file.url }}" target="_blank">{{ pdf.file.name|cut:'pdfs/' }}</a>
+          <a href="{% url 'delete_pdf' pdf.id %}" class="delete-link"><i class="fas fa-trash"></i></a>
+        </li>
+      {% empty %}
+        <li class="pdf-item">No PDFs uploaded yet.</li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endblock %}

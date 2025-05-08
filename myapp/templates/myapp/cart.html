@@ -1,0 +1,57 @@
+{% extends "myapp/base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/cart.css' %}">
+{% endblock %}
+
+{% block title %}STUPA - Cart{% endblock %}
+
+{% block content %}
+<div class="cart-container">
+  <h2>Your Cart</h2>
+
+  <table class="cart-table">
+    <thead>
+      <tr>
+        <th>Product</th>
+        <th>Name</th>
+        <th>Quantity</th>
+        <th>Subtotal</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in cart_items %}
+      <tr>
+        <td><img src="{{ item.product.image1.url }}" alt="{{ item.product.name }}"></td>
+        <td class="prod_name">{{ item.product.name }}</td>
+        <td>
+          <form method="POST" action="{% url 'update_cart' item.id %}">
+            {% csrf_token %}
+            <input class="q_box" type="number" name="quantity" value="{{ item.quantity }}" min="1">
+            <button type="submit" class="update-btn"><i class="fas fa-rotate-right"></i></button>
+          </form>
+        </td>
+        <td class="prod_name">{{ item.get_subtotal }} tk</td>
+        <td>
+          <form method="POST" action="{% url 'delete_from_cart' item.id %}">
+            {% csrf_token %}
+            <button type="submit" class="delete-btn"><i class="fas fa-trash-alt"></i></button>
+          </form>
+        </td>
+      </tr>
+      {% empty %}
+      <tr ><td colspan="5" class="empty-cart-message" >Your cart is empty.</td></tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <div class="cart-summary">
+    <h3>Total: {{ total }} tk</h3>
+    <form method="GET" action="{% url 'checkout' %}">
+      <button type="submit" class="checkout-btn" {% if cart_items|length == 0 %}disabled{% endif %}>Proceed to Checkout</button>
+    </form>
+  </div>
+</div>
+{% endblock %}

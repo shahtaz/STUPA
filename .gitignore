@@ -1,0 +1,16 @@
+*.pyc
+__pycache__/
+
+dead/
+
+db.sqlite3
+
+media/
+
+.env
+
+.vscode/
+
+.DS_Store
+
+*.log
